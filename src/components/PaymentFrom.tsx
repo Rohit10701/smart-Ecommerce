@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSession } from "next-auth/react";
 import { resetCart, saveOrder } from "@/redux/shoppingSlice";
-
+import toast, { Toaster } from "react-hot-toast";
 const PaymentForm = () => {
   const dispatch = useDispatch();
   const { productData, userInfo } = useSelector(
@@ -39,7 +39,8 @@ const PaymentForm = () => {
       }),
     });
     const data = await response.json();
-    console.log(response)
+    console.log(data)
+
     if (response.ok) {
       await dispatch(saveOrder({ order: productData, id: data.id }));
       stripe?.redirectToCheckout({ sessionId: data.id });
@@ -78,7 +79,11 @@ const PaymentForm = () => {
       </div>
       {userInfo ? (
         <button
-          onClick={handleCheckout}
+          onClick={async () => {
+            // handleCheckout();
+            toast.success('we are not eligible to accept international payments at this time. Please contact us for more information.');
+          }
+          }
           className="bg-black text-slate-100 mt-4 py-3 px-6 hover:bg-orange-950 cursor-pointer duration-200"
         >
           Proceed to checkout
@@ -93,6 +98,7 @@ const PaymentForm = () => {
           </p>
         </div>
       )}
+      <Toaster />
     </div>
   );
 };
