@@ -80,8 +80,8 @@ const PaymentForm = () => {
       {userInfo ? (
         <button
           onClick={async () => {
-            // handleCheckout();
-            toast.success('we are not eligible to accept international payments at this time. Please contact us for more information.');
+            handleCheckout();
+            toast.success('please wait');
           }
           }
           className="bg-black text-slate-100 mt-4 py-3 px-6 hover:bg-orange-950 cursor-pointer duration-200"

@@ -1,14 +1,14 @@
 'use client';
 import Container from '@/components/Container';
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux'
 import { StateProps } from '../../../type';
 import CartItem from '@/components/CartItem';
 import { resetCart } from '@/redux/shoppingSlice';
 import PaymentForm from '@/components/PaymentFrom';
 import Link from 'next/link';
 
-const page = () => {
+const Page = () => {
     const { productData } = useSelector((state: StateProps) => state.shopping)
     const dispatch = useDispatch()
     return (
@@ -41,4 +41,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
