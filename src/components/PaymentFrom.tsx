@@ -37,8 +37,6 @@ const PaymentForm = () => {
         items: productData,
         email: session?.user?.email,
       }),
-      credentials: "include", // Include credentials in the request
-      mode: "cors", // Set the mode to "cors"
     });
     const data = await response.json();
     console.log(data)

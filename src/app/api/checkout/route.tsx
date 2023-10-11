@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { Products } from "../../../../type";
 import Stripe from "stripe";
 
-export const POST = async (request: NextRequest) => {
+const POST = async (request: NextRequest) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!,{
     apiVersion : "2023-08-16"
   });
@@ -43,3 +43,5 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 };
+
+export default POST
