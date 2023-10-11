@@ -7,7 +7,7 @@ const Products = async () => {
     return (
         <Container className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 -mt-10'>
             {
-                products.productData?.map((item : any) => (
+                products.productData?.map(({item : any}) => (
                     <ProductData item={item} key={item._id}/>
                 ))
             }
