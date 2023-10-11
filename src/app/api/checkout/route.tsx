@@ -27,8 +27,8 @@ export const POST = async (request: NextRequest) => {
       payment_method_types: ["card"],
       line_items: extractingItems,
       mode: "payment",
-      success_url: `/success`,
-      cancel_url: `/checkout`,
+      success_url: `http://localhost:3000/success`,
+      cancel_url: `http://localhost:3000/checkout`,
       metadata: {
         email,
       },
