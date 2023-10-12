@@ -1,8 +1,8 @@
 import Container from "@/components/Container";
 import { getSingleProudct, getTrendingProducts } from "@/helpers";
 import { Products } from "../../../type";
-import ProductsData from "./src/components/ProductData";
-import SignleProduct from "./src/components/SingleProduct";
+import ProductsData from "./src/components/ProductData.tsx";
+import SignleProduct from "./src/components/SingleProduct.tsx";
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
