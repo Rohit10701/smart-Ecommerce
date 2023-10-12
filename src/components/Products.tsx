@@ -1,7 +1,7 @@
 import { getProducts } from "@/helpers";
 import React from "react";
 import Container from "./Container";
-import ProductsData from "src/components/ProductData.tsx";
+import ProductsData from "@/components/ProductData";
 import { Products } from "../../type";
 
 const Products = async () => {
